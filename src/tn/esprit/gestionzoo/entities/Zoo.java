@@ -1,13 +1,13 @@
 package tn.esprit.gestionzoo.entities;
 
 public class Zoo {
-    Animal[] animals;
+    public Animal[] animals;
     private String name;
     private String city;
     final int nbrCages = 25;
 
     int nbrAnimals;
-    static int NBRAnimals = 0;
+    public static int NBRAnimals = 0;
 
     public Zoo() {
     }
@@ -47,7 +47,7 @@ public class Zoo {
         System.out.println("Name: " + name + ", City: " + getCity() + ", N° Cages/Animals: " + nbrCages);
     }
 
-    boolean addAnimal(Animal animal) {
+    public boolean addAnimal(Animal animal) {
         if (searchAnimal(animal) != -1)
             return false;
         // if (nbrAnimals == nbrCages)
@@ -63,7 +63,7 @@ public class Zoo {
 
     }
 
-    boolean removeAnimal(Animal animal) {
+    public boolean removeAnimal(Animal animal) {
         int indexAnimal = searchAnimal(animal);
         if (indexAnimal == -1)
             return false;
@@ -75,27 +75,27 @@ public class Zoo {
         return true;
     }
 
-    void displayAnimals() {
+    public void displayAnimals() {
         System.out.println("Liste des animaux de " + name + ":");
         for (int i = 0; i < nbrAnimals; i++) {
             System.out.println(animals[i]);
         }
     }
 
-    int searchAnimal(Animal animal) {
+    public int searchAnimal(Animal animal) {
         int index = -1;
         for (int i = 0; i < nbrAnimals; i++) {
-            if (animal.name == animals[i].name)
+            if (animal.getName() == animals[i].getName())
                 return i;
         }
         return index;
     }
 
-    boolean isZooFull() {
+    public boolean isZooFull() {
         return !(animals[animals.length - 1] == null);
     }
 
-    static Zoo comparerZoo(Zoo z1, Zoo z2) {
+    public static Zoo comparerZoo(Zoo z1, Zoo z2) {
         if (z1.nbrAnimals > z2.nbrAnimals) {
             return z1;
         } else if (z1.nbrAnimals > z2.nbrAnimals) {

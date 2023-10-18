@@ -7,14 +7,14 @@ public class ZooManagement {
     public static void main(String[] args) {
         // PROSIT 3
         Animal lion = new Animal();
-        lion.name = "Simba";
+        lion.setName("Simba");
         lion.setAge(8);
-        lion.family = "Cats";
-        lion.isMammal = true;
+        lion.setFamily("Cats");
+        lion.setIsMammal(true);
 
         Zoo myZoo = new Zoo();
         myZoo.setName("Wildlife Park");
-        myZoo.city = "Ariana";
+        myZoo.setCity("Ariana");
         myZoo.animals = new Animal[25];
 
         Animal dog = new Animal("Canine", "Snoopy", 2, true);
