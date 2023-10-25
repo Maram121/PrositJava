@@ -4,6 +4,16 @@ public class Penguin extends Aquatic {
 
     private float swimmingDepth;
 
+    public void setSwimmingDepth(float swimmingDepth) {
+        this.swimmingDepth = swimmingDepth;
+
+    }
+
+    public float getSwimmingDepth() {
+        return this.swimmingDepth;
+
+    }
+
     public Penguin() {
     }
 
@@ -15,5 +25,11 @@ public class Penguin extends Aquatic {
     @Override
     public String toString() {
         return super.toString() + ", swimmingDepth:" + swimmingDepth;
+    }
+
+    @Override
+    public void swim() {
+        // TODO Auto-generated method stub
+        System.out.println("this penguin is swimming");
     }
 }
